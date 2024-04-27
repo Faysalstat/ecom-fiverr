@@ -1,0 +1,55 @@
+
+server.port: 8000
+
+#spring configs
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+            - POST
+            - GET
+            - OPTIONS
+            allowedHeaders:
+            - "Origin"
+            - "Content-Type"
+            - "Accept"
+            - "Authorization"
+            - "Referer"
+      routes:
+      - id: security-service
+        uri: lb://security-service  # Load-balanced route to Service Two
+        predicates:
+          - Path=/auth/**
+      - id: client-service
+        uri: lb://client-service
+        predicates:
+          - Path=/client/**
+        filters:
+          - AuthenticationFilter
+      - id: order-service
+        uri: lb://order-service
+        predicates:
+          - Path=/order/**
+        filters:
+          - AuthenticationFilter
+      - id: product-service
+        uri: lb://product-service
+        predicates:
+          - Path=/product/**
+        filters:
+          - AuthenticationFilter
+eureka:
+  client:
+    instance:
+      preferIpAddress: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

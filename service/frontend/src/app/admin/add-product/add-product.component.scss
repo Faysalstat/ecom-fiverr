@@ -1,0 +1,29 @@
+.img-holder{
+    width: 180px;
+    height:180px;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.upimg{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.btn-holder{
+    width: 180px;
+    padding:10px 0;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    cursor: pointer; /* "hand" cursor */
+}

@@ -1,0 +1,28 @@
+<div class="outer-box">
+    <div class="inner-box">
+      <header class="login-header">
+        <h1>Login</h1>
+      </header>
+      <main class="login-body mt-4">
+        <form #login="ngForm" (ngSubmit)="submitForm(login.value)">
+          <p>
+            <label for="email">Email: </label>
+            <input type="email" name="username" id="username" placeholder="youremail@example.com" ngModel #username="ngModel" required email>
+            <span style="color: red" *ngIf="username.touched && username.errors?.['required']">Email is required</span>
+            <span style="color:red" *ngIf="username.invalid && username.errors?.['email']">invalid format</span>
+          </p>
+          <p>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" placeholder="Password" ngModel #password="ngModel" required>
+            <span style="color: red" *ngIf="password.touched && password.invalid">Password is required</span>
+          </p>
+          <button type="submit" [disabled]="login.invalid">Submit</button>
+        </form>
+      </main>
+      <footer class="login-footer">
+        <p>Don't have an account? <a routerLink="/auth/register" >Register here</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  

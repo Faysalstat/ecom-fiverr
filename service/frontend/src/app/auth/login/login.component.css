@@ -1,0 +1,90 @@
+
+p.radio-group {
+    display: flex;
+    align-items: center;
+  }
+
+
+  input[type="radio"] {
+    margin-right: 10px; 
+    vertical-align: middle; 
+    
+  }
+
+  
+  .outer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    
+  }
+
+  .inner-box {
+    width: 350px; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
+    background-color: #fff;
+  }
+
+  .login-header {
+    text-align: center;
+    margin-bottom: 30px; 
+  }
+
+  .login-body p {
+    margin-bottom: 20px; 
+  }
+
+  .login-footer {
+    text-align: center;
+    margin-top: 30px; 
+  }
+
+  .login-footer a {
+    color: #007bff; 
+    text-decoration: none;
+  }
+
+  button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+  }
+
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  button:hover {
+    background-color: #0056b3; 
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: calc(100% - 20px); 
+    padding: 12px; 
+    margin-bottom: 25px;
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    transition: border-color 0.3s ease; 
+  }
+
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none; 
+    border-color: #007bff; 
+  }
+
+  span.error-message {
+    font-size: 14px; 
+    color: red;
+  }
+

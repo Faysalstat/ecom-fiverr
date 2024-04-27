@@ -1,0 +1,34 @@
+<mat-card>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="assets/img/product/{{product.image}}" class="rounded" alt="Cinque Terre">
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>{{product?.name}}</th>
+                    </tr>
+                    <tr>
+                        <th>Category</th>
+                        <th>{{product?.category}}</th>
+                    </tr>
+                    <tr>
+                        <th>Product Details</th>
+                        <th>{{product?.description}}</th>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <th>{{product?.price}}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <button type="button" class="btn btn-primary">Add to cart</button>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</mat-card>

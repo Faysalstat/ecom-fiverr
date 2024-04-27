@@ -1,0 +1,47 @@
+<mat-card>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Cart List</h2>
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <!-- <th>Action</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of orderItems;index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{item.productDTO?.name}}</td>
+                        <td style="width: 10%;">
+                            <mat-form-field class="full-width">
+                                <input type="number" matInput (change)="calculateTotal(i)" [(ngModel)]="item.quantity">
+                            </mat-form-field>
+                        </td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.totalPrice}}</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Total Bill:</th>
+                        <th colspan="4">{{totalOrderCost}} USD</th>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <button mat-flat-button (click)="checkout()" color="warn">Check Out</button>
+                        </td>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</mat-card>

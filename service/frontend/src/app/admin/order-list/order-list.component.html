@@ -1,0 +1,17 @@
+<mat-card class="mt-4">
+    <div class="row">
+        <div  class="col-md-12">
+            <h3>Pending Orders</h3>
+            <mat-card class="mt-4" *ngFor="let order of orders;index as i">
+                <mat-card-header>
+                  <mat-card-title>Order No:  OR_00{{i}}</mat-card-title>
+                  <mat-card-subtitle style="font-weight: bold;">SubTotal: {{order.totalCost}} USD</mat-card-subtitle>
+                  <mat-card-subtitle style="color:green">Status: {{order.orderStatus}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                  <button mat-raised-button color="accent" mat-button (click)="confirmOrder(order)">Confirm Order</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</mat-card>

@@ -1,0 +1,72 @@
+<mat-card>
+    <form [formGroup]="productCreateForm">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Add Product</h2>
+                <hr>
+            </div>
+            <div class="col-md-12">
+                <div class="img-holder">
+                    <img src="assets/img/product/{{imagePath}}" id="imgsrc" class="img-rounded upimg" />
+                </div>
+                <div class="btn-holder" data-provides="fileupload">
+                    <!-- <input type="file" (change)="onFileChanged($event)"> -->
+                    <input class="inputfile" (change)="onFileChanged($event)" type="file" id="fileSelect">
+                    <label class=" btn btn-info " for="fileSelect">Uplaod</label>
+                    <!-- <button class="btn btn-success" onclick="uploadImage()" >Uplaod</button> -->
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Product Code</mat-label>
+                    <input  formControlName="code"
+                        placeholder="Product Code" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Product Name</mat-label>
+                    <input  formControlName="name"
+                        placeholder="Product name" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Product category:</mat-label>
+                    <mat-select  formControlName="category">
+                        <mat-option *ngFor="let category of categories"
+                            [value]="category.value">{{category.label}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Price:</mat-label>
+                    <input  formControlName="price"
+                        placeholder="00.00" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Stock:</mat-label>
+                    <input  formControlName="quantity"
+                        placeholder="00.00" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Description:</mat-label>
+                    <input  formControlName="description"
+                        placeholder="Product Details" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <button style="margin-top: 10px;" mat-raised-button color="warn" (click)="addProduct()">
+                    <mat-icon>add</mat-icon>
+                    Add Product
+                </button>
+            </div>
+        </div>
+    </form>
+</mat-card>

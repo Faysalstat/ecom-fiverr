@@ -1,0 +1,31 @@
+<mat-card>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Order List and Tracing</h3>
+            <hr>
+        </div>
+        <div *ngFor="let order of orders;index as i" class="col-md-12">
+            <h4>Order No: OR_00{{i}}</h4>
+            <p>Total Bill: {{order.totalCost}} USD</p>
+            <p>Status: <span>{{order.orderStatus}}</span></p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr *ngFor="let item of order.orderItemDTOS;index as j">
+                        <th>{{j+1}}</th>
+                        <th>{{item.productDTO?.name}}</th>
+                        <th>{{item.quantity}}</th>
+                        <th>{{item.price}}</th>
+                        <th>{{item.totalPrice}}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</mat-card>
