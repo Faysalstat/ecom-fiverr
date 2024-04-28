@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/product")
 @Slf4j
 public class ProductController {
-public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/frontend/src/assets/img/product";
+public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/product";
 
 @Autowired
 private ProductService productService;
