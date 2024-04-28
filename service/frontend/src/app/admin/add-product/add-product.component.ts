@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { Category, Product } from 'src/app/model/model';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../model/model';
 
 @Component({
   selector: 'app-add-product',

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+import { ShopModule } from './shop/shop.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 
@@ -18,9 +19,11 @@ import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     AuthModule,
-    AdminModule
+    AdminModule,
+    ShopModule
   ],
   providers: [
+    provideAnimationsAsync(),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

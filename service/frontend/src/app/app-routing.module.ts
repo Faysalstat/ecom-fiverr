@@ -7,9 +7,7 @@ const routes: Routes = [
   {path: '',redirectTo:'auth',pathMatch:'full'},
   { path: 'auth',  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'shop',canActivate:[UserAuthGuard], loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule) },
-  // { path: 'shop',loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule) },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  // { path: 'admin',canActivate:[AdminAuthGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin',canActivate:[AdminAuthGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   
 ];
 
