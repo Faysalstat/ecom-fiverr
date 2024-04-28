@@ -17,18 +17,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("/product")
 @Slf4j
 public class ProductController {
-public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/product";
 
 @Autowired
 private ProductService productService;
     @PostMapping("/upload")
     public ResponseEntity<ResponseDTO<String>> uploadFile(
             @RequestParam("image") MultipartFile image) throws IOException {
+        String originalPath = System.getProperty("user.dir");
+        String trimmedPath = originalPath.substring(0, originalPath.lastIndexOf('\\'));
+        String UPLOAD_DIRECTORY = trimmedPath + "/frontend/src/assets/img/product";
         if (image.isEmpty()) {
             return ResponseEntity.ok(new ResponseDTO<>(false,"File Upload Failed",null));
         }
