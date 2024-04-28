@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ShopComponent } from './shop.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { PrimeNgModule } from 'src/primeng.module';
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { CartListComponent } from './cart-list/cart-list.component';
@@ -29,7 +28,6 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    PrimeNgModule,
     
     RouterModule.forChild(routes)
   ]

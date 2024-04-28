@@ -8,7 +8,6 @@ import { AdminComponent } from './admin.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
-import { PrimeNgModule } from 'src/primeng.module';
 
 const routes: Routes = [
   {path: '',component: AdminComponent,children:[
@@ -32,7 +31,6 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    PrimeNgModule,
     RouterModule.forChild(routes)
   ]
 })
