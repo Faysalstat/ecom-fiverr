@@ -6,7 +6,7 @@
         </div>
         <div *ngFor="let product of products" class="col-md-3">
         <div  class="card">
-            <img class="card-img-top" src="../../../assets/img/product/{{product.image}}" alt="Card image">
+            <img class="card-img-top" [src]="product.image" alt="Card image">
             <div (click)="showDetails(product.id)" class="card-body">
               <h4 class="card-title">{{product.name}}</h4>
               <p class="card-text">{{product.description}}</p>

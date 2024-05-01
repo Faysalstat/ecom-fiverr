@@ -12,7 +12,7 @@ export class AddProductComponent implements OnInit {
   productCreateForm!: UntypedFormGroup;
   categories: any[] = [];
   selectedFile!: File;
-  imagePath:string = "default.jpg"
+  imagePath:string = "";
   constructor(
     private productService: ProductService,
     private formBuilder:UntypedFormBuilder
@@ -65,7 +65,7 @@ export class AddProductComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.prepareForm();
-          this.imagePath = "default.jpg"
+          this.imagePath = "../../../assets/img/product/default.jpg"
         },
       });
   }

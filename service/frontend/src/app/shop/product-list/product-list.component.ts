@@ -20,7 +20,14 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProduct().subscribe({
       next:(res)=>{
-        this.products = res;
+        let products = res;
+        this.products = [];
+        products.map((elem:any)=>{
+          let product:Product =new Product();
+          product = {...elem};
+          product.image = "../../../assets/img/product/" + elem.image;
+          this.products.push(product);
+        })
       }
     });
   }
