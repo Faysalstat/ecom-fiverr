@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../model/model';
 
@@ -9,7 +9,7 @@ import { Product } from '../../model/model';
   styleUrls: ['./add-product.component.scss'],
 })
 export class AddProductComponent implements OnInit {
-  productCreateForm!: UntypedFormGroup;
+  productCreateForm!: FormGroup;
   categories: any[] = [];
   selectedFile!: File;
   imagePath:string = "";

@@ -12,6 +12,7 @@
                         <th>Category</th>
                         <th>Quantity</th>
                         <th>Price</th>
+                        <th style="width: 20%;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,14 @@
                         <td>{{product.category}}</td>
                         <td>{{product.quantity}}</td>
                         <td>{{product.price}}</td>
+                        <td class="flex-container">
+                            <button mat-icon-button (click)="delete(product)" color="warn" >
+                                <mat-icon>delete</mat-icon>
+                              </button>
+                              <button mat-icon-button (click)="edit(product.id)" color="default">
+                                <mat-icon>edit</mat-icon>
+                              </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

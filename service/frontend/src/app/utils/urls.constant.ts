@@ -15,6 +15,8 @@ export const AuthenticationUrls = {
 export const ProductServiceUrls = {
   UPLOAD : BASE_URL + "/product/upload",
   CREATE_PRODUCT : BASE_URL + "/product/create",
+  UPDATE_PRODUCT : BASE_URL + "/product/update",
+  DELETE_PRODUCT : BASE_URL + "/product/delete",
   GET_ALL_PRODUCT : BASE_URL + "/product/getall",
   GET_PRODUCT_BY_ID : BASE_URL + "/product",
 };

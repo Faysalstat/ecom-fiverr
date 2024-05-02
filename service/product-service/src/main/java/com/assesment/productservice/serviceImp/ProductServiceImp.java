@@ -35,7 +35,7 @@ public class ProductServiceImp implements ProductService {
         if (!productList.isEmpty()) {
             return productList.stream().map(productMapper::toDto)
                     .collect(Collectors.toList());
-        }else {
+        } else {
             log.error("Product Not Found");
             return null;
         }
@@ -47,7 +47,7 @@ public class ProductServiceImp implements ProductService {
         if (productOptional.isPresent()) {
             Product product = productOptional.get();
             return productMapper.toDto(product);
-        }else {
+        } else {
             log.error("Product Not Found");
             return null;
         }
@@ -56,10 +56,10 @@ public class ProductServiceImp implements ProductService {
     @Override
     public List<ProductDTO> getProductsByIds(List<Long> ids) {
         List<ProductDTO> productList = new ArrayList<>();
-        if(!ids.isEmpty()){
-           for(Long id:ids){
-               productList.add(productMapper.toDto(productRepository.findById(id).orElseThrow()));
-           }
+        if (!ids.isEmpty()) {
+            for (Long id : ids) {
+                productList.add(productMapper.toDto(productRepository.findById(id).orElseThrow()));
+            }
         }
         return productList;
     }
@@ -72,5 +72,11 @@ public class ProductServiceImp implements ProductService {
             return productMapper.toDto(productRepository.saveAndFlush(product));
         }
         return null;
+    }
+
+    @Override
+    public void deleteProduct(Long id) {
+        Product existingProduct = productRepository.findById(id).orElseThrow();
+        productRepository.deleteById(existingProduct.getId());
     }
 }

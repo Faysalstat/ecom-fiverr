@@ -88,14 +88,20 @@ private ProductService productService;
     }
 
     // Update Operation
-    @PutMapping("/{id}")
-    public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductDTO ProductDto) {
-        ProductDTO updatedProduct = productService.updateProduct(ProductDto);
+    @PostMapping("/update")
+    public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductDTO productDto) {
+        ProductDTO updatedProduct = productService.updateProduct(productDto);
         if (updatedProduct != null) {
             return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PostMapping("/delete")
+    public ResponseDTO<String> deleteProduct(@RequestBody ProductDTO productDto) {
+        productService.deleteProduct(productDto.getId());
+        return  new ResponseDTO<>(true,"Successfully Deleted","Product removed by ID:");
     }
 
 

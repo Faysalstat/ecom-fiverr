@@ -8,12 +8,14 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { MaterialModule } from '../../material.module';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 const routes: Routes = [
   {path: '',component: AdminComponent,children:[
     {path:'',component:OrderListComponent},
     {path:'product-list',component:ProductListComponent},
     {path:'add-product',component:AddProductComponent},
+    {path:'update-product/:id',component:UpdateProductComponent},
 
   ]},
 ];
@@ -23,7 +25,8 @@ const routes: Routes = [
     AdminComponent,
     AddProductComponent,
     ProductListComponent,
-    OrderListComponent
+    OrderListComponent,
+    UpdateProductComponent
   ],
   imports: [
     CommonModule,

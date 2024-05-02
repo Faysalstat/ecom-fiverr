@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+/assets/img/product
 /tmp
 /out-tsc
 /bazel-out

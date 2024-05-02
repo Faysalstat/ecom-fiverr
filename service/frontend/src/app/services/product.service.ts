@@ -28,4 +28,12 @@ export class ProductService {
       params: params,
     });
   }
+
+  public updateProduct(productModel: Product): Observable<any> {
+    return this.http.post(ProductServiceUrls.UPDATE_PRODUCT, productModel);
+  }
+
+  public deleteProduct(productModel: Product): Observable<any> {
+    return this.http.post(ProductServiceUrls.DELETE_PRODUCT, {id:productModel.id});
+  }
 }

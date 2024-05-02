@@ -1,0 +1,52 @@
+<mat-card>
+    <form [formGroup]="productUpdateForm">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Update Product</h2>
+                <hr>
+            </div>
+
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Product Code</mat-label>
+                    <input [readonly]="true"  formControlName="code"
+                        placeholder="Product Code" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Product Name</mat-label>
+                    <input  formControlName="name"
+                        placeholder="Product name" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Price:</mat-label>
+                    <input  formControlName="price"
+                        placeholder="00.00" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Stock:</mat-label>
+                    <input  formControlName="quantity"
+                        placeholder="00.00" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-label>Description:</mat-label>
+                    <input  formControlName="description"
+                        placeholder="Product Details" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <button style="margin-top: 10px;" mat-raised-button color="warn" (click)="UpdateProduct()">
+                    <mat-icon>refresh</mat-icon>
+                    Update Product
+                </button>
+            </div>
+        </div>
+    </form>
+</mat-card>
