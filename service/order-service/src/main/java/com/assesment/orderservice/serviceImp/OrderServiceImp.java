@@ -2,7 +2,6 @@ package com.assesment.orderservice.serviceImp;
 
 import com.assesment.orderservice.dto.OrderDetailsDTO;
 import com.assesment.orderservice.dto.OrderItemDTO;
-import com.assesment.orderservice.dto.ProductDTO;
 import com.assesment.orderservice.entity.OrderDetails;
 import com.assesment.orderservice.entity.OrderItem;
 import com.assesment.orderservice.mapper.OrderMapper;
@@ -109,6 +108,15 @@ public class OrderServiceImp implements OrderService {
             }
         }
         return orderDetailsDTOList;
+    }
+
+    @Override
+    public Double calculateProfit(Double costPrice, Double sellingPrice, int quantity) {
+        if (costPrice < 0 || sellingPrice < 0 || quantity < 0) {
+            throw new IllegalArgumentException("Cost price, selling price, and quantity must not be negative.");
+        }
+        return (sellingPrice - costPrice) * quantity;
+
     }
 
 //    @Autowired

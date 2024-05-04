@@ -1,6 +1,5 @@
 package com.assesment.orderservice.service;
 
-import com.assesment.orderservice.dto.CustomerDTO;
 import com.assesment.orderservice.dto.OrderDetailsDTO;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,7 @@ public interface OrderService {
     List<OrderDetailsDTO> getAllOrderByUserId(long userId);
 
     List<OrderDetailsDTO> getAllOrderByStatus(String status);
-
+    Double calculateProfit(Double costPrice, Double sellingPrice, int quantity);
 //    OrderDetailsDTO getById
 
 
